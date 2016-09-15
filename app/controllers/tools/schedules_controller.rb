@@ -1,19 +1,23 @@
 class Tools::SchedulesController < ApplicationController
 
   def new
-    array = ["Saturday","Sunday", "Monday", "Tuesday", "Wednesday", "Thursday"]
+    days_per_week = ["Saturday","Sunday", "Monday", "Tuesday", "Wednesday", "Thursday"]
+    slots = ["First Slot", "Second Slot", "Third Slot", "Fourth Slot", "Fifth Slot"]
     @user = User.new
     @user.days = []
     #don't forget to put if condition for the next part
     #to make sure that it won't happen again in the real world
-    array.each do |i|
+    days_per_week.each do |i|
       @day = Day.new(:Name => i)
       puts i
       @user.days.push(@day)
     end
 
     @user.days.each do |day|
-      5.times {day.slots.build}
+      slots.each do |i|
+        @slot = Slot.new(:Name => i)
+        day.slots << @slot
+      end
     end
 
   end
