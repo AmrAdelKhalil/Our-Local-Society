@@ -31,10 +31,10 @@ class RegistrationsController < Devise::RegistrationsController
   end
 
 
-  # for telling devise where to render after the signup
+  # for telling devise where to render after the sign_up
   def after_sign_in_path_for(resource)
-    #this is rendering to the account of the user
-    actors_users_url
+    #this is rendering to SchedulesController#new
+    new_tools_schedule_url
   end
   #this functions makes sure that some parameters are exists when sign_up
   def sign_up_params

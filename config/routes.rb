@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
 
+  namespace :tools do
+    # get 'schedules/new'
+    resources :schedules
+  end
+
   #the controller part to tell Devise to see my registrations_controller.rb
   devise_for :users, :controllers => {:registrations => 'registrations'}
 

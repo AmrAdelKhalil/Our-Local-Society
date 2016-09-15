@@ -1,0 +1,32 @@
+<h1>Tools::Schedules#new</h1>
+<p>Find me in app/views/tools/schedules/new.html.erb</p>
+<strong> ------------------ </strong>
+<%= form_for @user, url: {action: "create"} do |f| %>
+
+  <%= f.fields_for :days do |d| %>
+    <%= d.label(d.object.Name)%>
+    <br>
+    <%= d.fields_for :slots do |s| %>
+      shit
+    <% end %>
+    <br>
+    <%= d.label(:Summary_about_the_day)%>
+    <br>
+    <%= d.text_area(:Summary,{cols: 10, rows:10})%>
+    <br>
+  <% end %>
+  <br>
+  <%=f.submit "click"%>
+<%end%>
+
+
+<br>
+<%= @user.days.size%>
+<br>
+<%= @user.days[0].slots.size%>
+<br>
+
+<% @user.days.each do |d|%>
+  <%=d.Name%>
+  <br>
+<%end%>
