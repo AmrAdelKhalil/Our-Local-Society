@@ -1,6 +1,6 @@
-<h1>Tools::Schedules#new</h1>
-<p>Find me in app/views/tools/schedules/new.html.erb</p>
-<%= form_for @user, url: {action: "create"} do |f| %>
+hello
+<%= current_user.first_name %><br>
+<%= form_for current_user, url: {action: "update"} do |f| %>
 
   <%= f.fields_for :days do |d| %>
     -------------------------------------
@@ -11,20 +11,18 @@
     ------------------------------------------------
     <br>
     <%= d.fields_for :slots do |s| %>
-      <%= s.label(s.object.Name)%>
-      <br>
-      <%= s.text_field(:Desc)%>
+      <%= s.text_field(:Desc, autocomplete: "off")%>
       <br>
     <% end %>
 
     <br>
     <%= d.label(:Summary_about_the_day)%>
     <br>
-    <%= d.text_area(:Summary,{cols: 10, rows:10})%>
+    <%= d.text_area(:Summary,{cols: 10, rows:10, autocomplete: "off"})%>
     <br>
   <% end %>
 
   <br>
-  <%=f.submit "click"%>
+  <%=f.submit "update"%>
 
 <%end%>

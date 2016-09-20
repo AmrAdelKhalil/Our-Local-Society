@@ -9,3 +9,21 @@ hello <%=current_user.first_name%>, <%=current_user.email%>
   <%= link_to('Login', new_user_session_path)  %>
   </li>
 <% end %>
+
+<%= link_to('Edit the table', {:controller => 'tools/schedules', :action => 'edit',:id => current_user.id}) %>
+
+<p>------------------------</p>
+
+<% current_user.days.each do |day| %>
+  ------------------
+  <%=day.Name%><br>
+  ..........<br>
+  <% day.slots.each do |slot| %>
+    <%=slot.Desc%><br>
+    <%=slot.Start%><br>
+    <%=slot.End%><br>
+    ************<br>
+  <%end%>
+  ..........the next is the summary of the day<br>
+  <%=day.Summary%><br>
+<%end%>

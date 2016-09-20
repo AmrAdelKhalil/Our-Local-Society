@@ -9,7 +9,6 @@ class Tools::SchedulesController < ApplicationController
     #to make sure that it won't happen again in the real world
     days_per_week.each do |i|
       @day = Day.new(:Name => i)
-      puts i
       @user.days.push(@day)
     end
 
@@ -23,9 +22,35 @@ class Tools::SchedulesController < ApplicationController
   end
 
   def create
+    #you can see here to iterate through the params i made key and value_day
+    #because if you print the params you will see structure like this
+    #"0" => {Name: "x", slot...} so you need key and value
+    params[:user][:days_attributes].each do |key_day,value_day|
 
+        @day = Day.new(:user_id=>current_user.id, :Name=>value_day["Name"], :Summary=>value_day["Summary"])
 
-    redirect_to :action => 'new'
+        @day.save
+
+        value_day["slots_attributes"].each do |key_slot,value_slot|
+          @slot = Slot.new(:day_id=>@day.id, :Desc=>value_slot["Desc"], :Start=> "", :End=> "")
+
+          @slot.save
+        end
+
+    end
+
+    redirect_to actors_users_path
   end
 
+  def edit
+    #the form in edit.html.erb need to be changed
+    #you will edit some textfields with ids
+    #then in update function you will iterate on
+    #them and update them
+  end
+
+  def update
+    current_user.update
+    redirect_to actors_users_path
+  end
 end
