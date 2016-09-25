@@ -7,6 +7,7 @@ class Tools::SchedulesController < ApplicationController
     @user.days = []
     #don't forget to put if condition for the next part
     #to make sure that it won't happen again in the real world
+    #i mean refreshing the web page or go back to it again
     days_per_week.each do |i|
       @day = Day.new(:Name => i)
       @user.days.push(@day)
@@ -43,14 +44,15 @@ class Tools::SchedulesController < ApplicationController
   end
 
   def edit
-    #the form in edit.html.erb need to be changed
-    #you will edit some textfields with ids
-    #then in update function you will iterate on
-    #them and update them
+
   end
 
   def update
-    current_user.update
+    params[:user][:days_attributes].each do|key_day, value_day|
+      value_day["slots_attributes"].each do|key_slot, value_slot|
+        Slot.find(value_slot[:id]).update(:Desc => value_slot[:Desc])
+      end
+    end
     redirect_to actors_users_path
   end
 end

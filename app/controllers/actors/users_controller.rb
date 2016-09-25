@@ -4,6 +4,7 @@ class Actors::UsersController < ApplicationController
     def index
       current_user.days.each do |day|
         puts day.Name
+        puts day.id
       end
     end
 
