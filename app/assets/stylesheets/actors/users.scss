@@ -1,3 +1,73 @@
 // Place all the styles related to the actors/Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@font-face {
+  font-family: "Indie Flower";
+  src: url("/assets/IndieFlower.ttf") format("truetype");
+}
+@font-face {
+  font-family: "CaveatBrush-Regular";
+  src: url("/assets/CaveatBrush-Regular.ttf");
+}
+body{
+  background-image: url("/assets/profile.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.header{
+  font-size: 60px;
+  text-align: center;
+  margin-top: 200px;
+  font-family: "CaveatBrush-Regular";
+  color: #333;
+}
+.navbar-default{
+  background-color: transparent;
+  border: none;
+  font-family: "CaveatBrush-Regular";
+  font-size: 25px;
+}
+
+.navbar-default .navbar-nav>li>a{
+  color: #333;
+  transition-duration: .5s;
+}
+.navbar-default .navbar-nav>li>a:hover{
+  background-color: #bfbfbf;
+  border-radius: 7px;
+  transition-duration: .5s;
+}
+.info-card{
+  background-color: #bfbfbf;
+  border: 1px solid black;
+  height: 300px;
+  width: 230px;
+  border-radius: 7px;
+  text-align: center;
+  padding-top: 7px;
+}
+.info-card img{
+  border-radius: 5px;
+}
+#MyName{
+  margin-top: 5px;
+  font-family:"CaveatBrush-Regular";
+  font-size: 40px;
+}
+#MyLevel{
+  margin-top: 5px;
+  font-family:"CaveatBrush-Regular";
+  font-size: 20px;
+}
+#LogOut{
+  margin-top: 5px;
+  font-size: 30px;
+}
+#LogOut a{
+  font-family:"CaveatBrush-Regular";
+  color:#323232;
+  text-decoration: none;
+}
+.container{
+  padding-left: 10px;
+}

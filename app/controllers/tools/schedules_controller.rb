@@ -1,5 +1,5 @@
 class Tools::SchedulesController < ApplicationController
-
+  layout false
   def new
     days_per_week = ["Saturday","Sunday", "Monday", "Tuesday", "Wednesday", "Thursday"]
     slots = ["First Slot", "Second Slot", "Third Slot", "Fourth Slot", "Fifth Slot"]

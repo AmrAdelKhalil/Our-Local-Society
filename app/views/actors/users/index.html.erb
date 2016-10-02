@@ -1,29 +1,77 @@
-hello <%=current_user.first_name%>, <%=current_user.email%>
-....................
-<% if user_signed_in? %>
-  <li>
-  <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
-  </li>
-<% else %>
-  <li>
-  <%= link_to('Login', new_user_session_path)  %>
-  </li>
-<% end %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title><%=current_user.first_name.capitalize%>'s HomePage</title>
+  <!-- <%= stylesheet_link_tag('users.scss', :media =>'all') %> -->
+  <%= stylesheet_link_tag('bootstrap.min.css', :media =>'all') %>
+  <link rel="stylesheet" href="/assets/actors/users.scss">
+  <%= javascript_include_tag 'application'%>
+</head>
+<body>
 
-<%= link_to('Edit the table', {:controller => 'tools/schedules', :action => 'edit',:id => current_user.id}) %>
 
-<p>------------------------</p>
+  <nav class="navbar navbar-default">
+    <div class="container">
+      <ul class="nav navbar-nav pull-left">
+        <li>
+          <h1>Our Local Society</h1>
+        </li>
+      </ul>
+      <!-- <ul class="nav navbar-nav pull-right">
+        <% if user_signed_in? %>
+          <li>
+          <%= link_to('logout', destroy_user_session_path, :method => :delete) %>
+          </li>
+        <% else %>
+          <li>
+          <%= link_to('login', new_user_session_path)  %>
+          </li>
+        <% end %>
+      </ul> -->
+    </div>
+  </nav>
 
-<% current_user.days.each do |day| %>
-  ------------------
-  <%=day.Name%><br>
-  ..........<br>
-  <% day.slots.each do |slot| %>
-    <%=slot.Desc%><br>
-    <%=slot.Start%><br>
-    <%=slot.End%><br>
-    ************<br>
-  <%end%>
-  ..........the next is the summary of the day<br>
-  <%=day.Summary%><br>
-<%end%>
+  <div class="container">
+  <div class="row">
+    <div class="col-lg-2">
+        <div class="info-card">
+          <img src="/assets/UserTemplate.png">
+          <p id="MyName"><%=current_user.first_name.capitalize%> <%=current_user.second_name.capitalize%></p>
+          <p id="MyLevel">Level: <%=current_user.level%></p>
+          <p id="LogOut">
+            <% if user_signed_in? %>
+              <%= link_to('logout', destroy_user_session_path, :method => :delete) %>
+            <% else %>
+              <%= link_to('login', new_user_session_path)  %>
+            <% end %>
+          </p>
+        </div>
+    </div>
+    <div class="col-lg-9 col-lg-offset-1" style="background-color:red;">
+      <!--Body content-->ni
+    </div>
+  </div>
+</div>
+
+  <!-- <%= link_to('Edit the table', {:controller => 'tools/schedules', :action => 'edit',:id => current_user.id}) %>
+
+  <p>------------------------</p>
+
+  <% current_user.days.each do |day| %>
+    ------------------
+    <%=day.Name%><br>
+    ..........<br>
+    <% day.slots.each do |slot| %>
+      <%=slot.Desc%><br>
+      <%=slot.Start%><br>
+      <%=slot.End%><br>
+      ************<br>
+    <%end%>
+    ..........the next is the summary of the day<br>
+    <%=day.Summary%><br>
+  <%end%> -->
+
+
+</body>
+</html>
