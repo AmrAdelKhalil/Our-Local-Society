@@ -2,11 +2,14 @@ Rails.application.routes.draw do
 
   namespace :tools do
     # get 'schedules/new'
+    get 'schedules/:day_id/:slot_id' => 'schedules#edit'
+    patch 'schedules/:day_id/:slot_id' => 'schedules#update'
+    put 'schedules/:day_id/:slot_id' => 'schedules#update'
     resources :schedules
   end
 
   #the controller part to tell Devise to see my registrations_controller.rb
-  devise_for :users, :controllers => {:registrations => 'registrations'}
+  devise_for :users, :controllers => {:registrations => 'registrations',sessions: "sessions"}
 
   namespace :actors do
     resources :users

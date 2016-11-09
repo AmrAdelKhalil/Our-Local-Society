@@ -10,14 +10,13 @@
   src: url("/assets/CaveatBrush-Regular.ttf");
 }
 body{
-  background-image: url("/assets/profile.jpg");
+  background-image: url("/assets/wel.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }
+
 .header{
-  font-size: 60px;
-  text-align: center;
-  margin-top: 200px;
+  font-size: 50px;
   font-family: "CaveatBrush-Regular";
   color: #333;
 }
@@ -38,7 +37,9 @@ body{
   transition-duration: .5s;
 }
 .info-card{
-  background-color: #bfbfbf;
+  margin-top: 25px;
+  // background-color: #bfbfbf;
+  background-color: #EBEBEB;
   border: 1px solid black;
   height: 300px;
   width: 230px;
@@ -49,15 +50,22 @@ body{
 .info-card img{
   border-radius: 5px;
 }
-#MyName{
+.defaultWriteWay{
   margin-top: 5px;
   font-family:"CaveatBrush-Regular";
   font-size: 40px;
+  margin-bottom: 0px;
 }
-#MyLevel{
+.MidWriteWay{
   margin-top: 5px;
   font-family:"CaveatBrush-Regular";
   font-size: 20px;
+}
+.smWriteWay{
+  font-family:"CaveatBrush-Regular";
+  font-size: 10px;
+  margin:0;
+  padding:0;
 }
 #LogOut{
   margin-top: 5px;
@@ -70,4 +78,29 @@ body{
 }
 .container{
   padding-left: 10px;
+}
+.DayContent{
+  width: 150px;
+  height: 100px;
+  border-radius: 7px;
+  margin-top: 10px;
+  border: 1px solid black;
+  margin-right: 5px;
+  position: relative;
+}
+.MoveLeft{
+  margin-top: 30px;
+  margin-right: 80px;
+}
+.MoveRight{
+  margin-top: 3px;
+  margin-left: 35px;
+}
+.DateOfLec p{
+  display: inline;
+}
+.smWriteWay .editBtn{
+  top:0;
+  right: 5px;
+  position: absolute;
 }

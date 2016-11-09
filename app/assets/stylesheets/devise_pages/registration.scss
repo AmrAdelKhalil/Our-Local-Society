@@ -1,0 +1,30 @@
+h2{
+  color: red;
+}
+
+.signupForm{
+  // position: absolute;
+  // top:50%;
+  // left:43%;
+  h1{
+    font-family: CaveatBrush-Regular;
+    font-size: 50px;
+    text-align: center;
+  }
+
+  .sub_btn{
+    font-family: "CaveatBrush-Regular";
+    font-size: 18px;
+    margin-top: 7px;
+  }
+
+  a{
+    color: black;
+    font-family: "CaveatBrush-Regular";
+  }
+}
+.form-actions{
+    margin: 0;
+    background-color: transparent;
+    text-align: center;
+}

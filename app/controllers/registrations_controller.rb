@@ -1,8 +1,9 @@
 class RegistrationsController < Devise::RegistrationsController
-
+  skip_before_filter :verify_authenticity_token, :only => :create
   #this function is taken from (https://github.com/plataformatec/devise/blob/master/app/controllers/devise/registrations_controller.rb)
   #but i added some validations
   def create
+    
     build_resource(sign_up_params)
 
       #this is a private function to check params

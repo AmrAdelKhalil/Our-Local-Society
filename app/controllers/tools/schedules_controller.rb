@@ -44,15 +44,21 @@ class Tools::SchedulesController < ApplicationController
   end
 
   def edit
-
+    @day = Day.find(params[:day_id])
+    @slot = Slot.find(params[:slot_id])
   end
 
   def update
-    params[:user][:days_attributes].each do|key_day, value_day|
-      value_day["slots_attributes"].each do|key_slot, value_slot|
-        Slot.find(value_slot[:id]).update(:Desc => value_slot[:Desc])
-      end
-    end
+    # params[:user][:days_attributes].each do|key_day, value_day|
+    #   value_day["slots_attributes"].each do|key_slot, value_slot|
+    #     Slot.find(value_slot[:id]).update(:Desc => value_slot[:Desc])
+    #   end
+    # end
+    day = Day.find(params[:day_id])
+    slot = Slot.find(params[:slot_id])
+    slot.update(:Desc => params[:slot][:Desc])
+    slot.save
+    puts params[:slot]
     redirect_to actors_users_path
   end
 end

@@ -1,3 +1,39 @@
 // Place all the styles related to the tools/Schedules controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@font-face {
+  font-family: "Indie Flower";
+  src: url("/assets/IndieFlower.ttf") format("truetype");
+}
+@font-face {
+  font-family: "CaveatBrush-Regular";
+  src: url("/assets/CaveatBrush-Regular.ttf");
+}
+body{
+  background-image: url("/assets/wel.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.DayContent{
+  // width: 150px;
+  // height: 100px;
+  border-radius: 7px;
+  text-align: center;
+  border: 1px solid black;
+  // margin-right: 5px;
+}
+.container{
+    margin-top: 70px;
+}
+.defaultWriteWay{
+  margin-top: 5px;
+  font-family:"CaveatBrush-Regular";
+  font-size: 40px;
+  margin-bottom: 0px;
+}
+.textArea{
+  margin-top: 30px;
+}
+.textArea textarea{
+  border-radius: 6px;
+}
