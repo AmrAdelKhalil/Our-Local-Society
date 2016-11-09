@@ -1,0 +1,38 @@
+// Place all the styles related to the StaticPages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+@font-face {
+  font-family: "Indie Flower";
+  src: url("/assets/IndieFlower.ttf") format("truetype");
+}
+@font-face {
+  font-family: "CaveatBrush-Regular";
+  src: url("/assets/CaveatBrush-Regular.ttf");
+}
+body{
+  background-image: url("wel.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.header{
+  font-size: 60px;
+  text-align: center;
+  margin-top: 200px;
+  font-family: "CaveatBrush-Regular";
+  color: #333;
+}
+.navbar-default{
+  background-color: transparent;
+  border: none;
+  font-family: "CaveatBrush-Regular";
+  font-size: 25px;
+}
+.navbar-default .navbar-nav>li>a{
+  color: #333;
+  transition-duration: 2s;
+}
+.navbar-default .navbar-nav>li>a:hover{
+  background-color: #bfbfbf;
+  border-radius: 7px;
+  transition-duration: 2s;
+}

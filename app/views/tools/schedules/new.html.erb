@@ -1,0 +1,30 @@
+<h1>Tools::Schedules#new</h1>
+<p>Find me in app/views/tools/schedules/new.html.erb</p>
+<%= form_for @user, url: {action: "create"} do |f| %>
+
+  <%= f.fields_for :days do |d| %>
+    -------------------------------------
+    <br>
+    <%= d.label(d.object.Name)%>
+    <%= d.hidden_field(:Name,:value => d.object.Name) %>
+    <br>
+    ------------------------------------------------
+    <br>
+    <%= d.fields_for :slots do |s| %>
+      <%= s.label(s.object.Name)%>
+      <br>
+      <%= s.text_field(:Desc)%>
+      <br>
+    <% end %>
+
+    <br>
+    <%= d.label(:Summary_about_the_day)%>
+    <br>
+    <%= d.text_area(:Summary,{cols: 10, rows:10})%>
+    <br>
+  <% end %>
+
+  <br>
+  <%=f.submit "click"%>
+
+<%end%>
