@@ -46,6 +46,7 @@ class Tools::SchedulesController < ApplicationController
   def edit
     @day = Day.find(params[:day_id])
     @slot = Slot.find(params[:slot_id])
+    render("edit")
   end
 
   def update

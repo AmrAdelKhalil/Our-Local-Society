@@ -9,6 +9,10 @@
   font-family: "CaveatBrush-Regular";
   src: url("/assets/CaveatBrush-Regular.ttf");
 }
+*{
+  padding: 0;
+  margin: 0;
+}
 body{
   background-image: url("/assets/wel.jpg");
   background-repeat: no-repeat;
@@ -94,13 +98,24 @@ body{
 }
 .MoveRight{
   margin-top: 3px;
-  margin-left: 35px;
+  margin-left: 20px;
 }
 .DateOfLec p{
   display: inline;
 }
 .smWriteWay .editBtn{
-  top:0;
-  right: 5px;
+  top:1;
+  right: 2px;
   position: absolute;
+}
+
+.smWriteWay .editImg{
+  margin: 0;
+  padding: 0;
+  width: 20px;
+  height: 20px;
+  top:2px;
+  right: 3px;
+  position: absolute;
+  background-color: transparent;
 }
