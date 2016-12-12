@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   has_many :days, dependent: :destroy
-
+  has_many :friends, dependent: :destroy
   #This creates an days_attributes= method
   #on User that allows you to create
   #, update and (optionally) destroy days.
