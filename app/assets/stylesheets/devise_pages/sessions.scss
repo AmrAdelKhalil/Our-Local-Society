@@ -9,6 +9,11 @@
   font-family: "CaveatBrush-Regular";
   src: url("/assets/CaveatBrush-Regular.ttf");
 }
+body{
+  background-image: url("/assets/wel.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 .container{
   // position: relative;
 }

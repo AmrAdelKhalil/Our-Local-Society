@@ -1,7 +1,20 @@
+@font-face {
+  font-family: "Indie Flower";
+  src: url("/assets/IndieFlower.ttf") format("truetype");
+}
+@font-face {
+  font-family: "CaveatBrush-Regular";
+  src: url("/assets/CaveatBrush-Regular.ttf");
+}
+
 h2{
   color: red;
 }
-
+body{
+  background-image: url("/assets/wel.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 .signupForm{
   // position: absolute;
   // top:50%;

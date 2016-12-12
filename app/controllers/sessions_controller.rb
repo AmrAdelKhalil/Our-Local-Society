@@ -18,5 +18,6 @@ end
 def destroy
   super
   request.reset_session
+  puts "amr adel"
 end
 end
