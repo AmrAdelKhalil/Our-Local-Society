@@ -119,3 +119,35 @@ body{
   position: absolute;
   background-color: transparent;
 }
+
+.info-friends{
+  padding: 7px;
+  margin-top: 10px;
+  background-color: #EBEBEB;
+  border: 1px solid black;
+  width: 230px;
+  border-radius: 7px;
+}
+
+.info-friends ul li{
+  list-style-type: none;
+  margin-top: 7px;
+}
+
+.info-friends ul li p{
+  display: inline;
+  font-family: "CaveatBrush-Regular";
+  margin-left: 10px;
+  font-size: 20px;
+}
+
+.info-friends ul li p a:hover{
+  text-decoration: none;
+}
+.circle {
+	width: 35%;
+	height: 35%;
+	-moz-border-radius:50%;
+	-webkit-border-radius:50%;
+	border-radius: 50%;
+}
