@@ -33,6 +33,7 @@
         <div class="info-friends">
           <ul>
             <!-- we should put a loop in here to list friends instead of static li tag -->
+            <%@friends.each do |f|%>
             <li>
               <p>
                 <a href="#">
@@ -40,9 +41,10 @@
                 </a>
               </p>
               <p>
-                abdo sameh
+                <%=f.first_name%> 
               </p>
             </li>
+            <%end%>
           </ul>
         </div>
     </div>

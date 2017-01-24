@@ -7,7 +7,7 @@ class Actors::UsersController < ApplicationController
     #     puts day.Name
     #     puts day.id
     #   end
-        @frineds = current_user.friends
+        @friends = current_user.all_friends
         render('index')
     end
 
