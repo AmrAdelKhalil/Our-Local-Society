@@ -1,5 +1,5 @@
 class Tools::SchedulesController < ApplicationController
-
+  layout false
   def new
     days_per_week = ["Saturday","Sunday", "Monday", "Tuesday", "Wednesday", "Thursday"]
     slots = ["First Slot", "Second Slot", "Third Slot", "Fourth Slot", "Fifth Slot"]
@@ -7,6 +7,7 @@ class Tools::SchedulesController < ApplicationController
     @user.days = []
     #don't forget to put if condition for the next part
     #to make sure that it won't happen again in the real world
+    #i mean refreshing the web page or go back to it again
     days_per_week.each do |i|
       @day = Day.new(:Name => i)
       @user.days.push(@day)
@@ -43,14 +44,22 @@ class Tools::SchedulesController < ApplicationController
   end
 
   def edit
-    #the form in edit.html.erb need to be changed
-    #you will edit some textfields with ids
-    #then in update function you will iterate on
-    #them and update them
+    @day = Day.find(params[:day_id])
+    @slot = Slot.find(params[:slot_id])
+    render("edit")
   end
 
   def update
-    current_user.update
+    # params[:user][:days_attributes].each do|key_day, value_day|
+    #   value_day["slots_attributes"].each do|key_slot, value_slot|
+    #     Slot.find(value_slot[:id]).update(:Desc => value_slot[:Desc])
+    #   end
+    # end
+    day = Day.find(params[:day_id])
+    slot = Slot.find(params[:slot_id])
+    slot.update(:Desc => params[:slot][:Desc])
+    slot.save
+    puts params[:slot]
     redirect_to actors_users_path
   end
 end

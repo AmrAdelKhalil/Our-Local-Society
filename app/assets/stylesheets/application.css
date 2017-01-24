@@ -10,6 +10,14 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
- *= require_self
+ *= require bootstrap.min
+ */
+
+
+
+ /*
+  i have deleted  (&= require_self and &= require_tree .) because they including some SCSS that is anoying me
+  if you want it back, put it under require bottstrap.min and replace & with *.
+  read this: https://codedecoder.wordpress.com/2013/10/26/require_tree-require_self-in-asset_pipeline/
+
  */

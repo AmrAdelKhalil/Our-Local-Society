@@ -1,3 +1,153 @@
 // Place all the styles related to the actors/Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@font-face {
+  font-family: "Indie Flower";
+  src: url("/assets/IndieFlower.ttf") format("truetype");
+}
+@font-face {
+  font-family: "CaveatBrush-Regular";
+  src: url("/assets/CaveatBrush-Regular.ttf");
+}
+*{
+  padding: 0;
+  margin: 0;
+}
+body{
+  background-image: url("/assets/wel.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.header{
+  font-size: 50px;
+  font-family: "CaveatBrush-Regular";
+  color: #333;
+}
+.navbar-default{
+  background-color: transparent;
+  border: none;
+  font-family: "CaveatBrush-Regular";
+  font-size: 25px;
+}
+
+.navbar-default .navbar-nav>li>a{
+  color: #333;
+  transition-duration: .5s;
+}
+.navbar-default .navbar-nav>li>a:hover{
+  background-color: #bfbfbf;
+  border-radius: 7px;
+  transition-duration: .5s;
+}
+.info-card{
+  margin-top: 25px;
+  // background-color: #bfbfbf;
+  background-color: #EBEBEB;
+  border: 1px solid black;
+  height: 300px;
+  width: 230px;
+  border-radius: 7px;
+  text-align: center;
+  padding-top: 7px;
+}
+.info-card img{
+  border-radius: 5px;
+}
+.defaultWriteWay{
+  margin-top: 5px;
+  font-family:"CaveatBrush-Regular";
+  font-size: 40px;
+  margin-bottom: 0px;
+}
+.MidWriteWay{
+  margin-top: 5px;
+  font-family:"CaveatBrush-Regular";
+  font-size: 20px;
+}
+.smWriteWay{
+  font-family:"CaveatBrush-Regular";
+  font-size: 10px;
+  margin:0;
+  padding:0;
+}
+#LogOut{
+  margin-top: 5px;
+  font-size: 30px;
+}
+#LogOut a{
+  font-family:"CaveatBrush-Regular";
+  color:#323232;
+  text-decoration: none;
+}
+.container{
+  padding-left: 10px;
+}
+.DayContent{
+  width: 150px;
+  height: 100px;
+  border-radius: 7px;
+  margin-top: 10px;
+  border: 1px solid black;
+  margin-right: 5px;
+  position: relative;
+}
+.MoveLeft{
+  margin-top: 30px;
+  margin-right: 80px;
+}
+.MoveRight{
+  margin-top: 3px;
+  margin-left: 20px;
+}
+.DateOfLec p{
+  display: inline;
+}
+.smWriteWay .editBtn{
+  top:1;
+  right: 2px;
+  position: absolute;
+}
+
+.smWriteWay .editImg{
+  margin: 0;
+  padding: 0;
+  width: 20px;
+  height: 20px;
+  top:2px;
+  right: 3px;
+  position: absolute;
+  background-color: transparent;
+}
+
+.info-friends{
+  padding: 7px;
+  margin-top: 10px;
+  background-color: #EBEBEB;
+  border: 1px solid black;
+  width: 230px;
+  border-radius: 7px;
+}
+
+.info-friends ul li{
+  list-style-type: none;
+  margin-top: 7px;
+}
+
+.info-friends ul li p{
+  display: inline;
+  font-family: "CaveatBrush-Regular";
+  margin-left: 10px;
+  font-size: 20px;
+}
+
+.info-friends ul li p a:hover{
+  text-decoration: none;
+}
+.circle {
+	width: 35%;
+	height: 35%;
+	-moz-border-radius:50%;
+	-webkit-border-radius:50%;
+	border-radius: 50%;
+}

@@ -1,7 +1,23 @@
-<h1>StaticPages#welcome</h1>
-<p>Find me in app/views/static_pages/welcome.html.erb</p>
-<h1>welcome to myWelcomePage</h1>
-<br>
-<%= link_to("sign_in",new_user_session_path) %>
-<br>
-<%= link_to("sign_up",new_user_registration_path) %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Welcome Page</title>
+   <%= stylesheet_link_tag('application', :media =>'all') %>
+   <%= stylesheet_link_tag('/assets/static_pages') %>
+   <%= javascript_include_tag 'application'%>
+</head>
+<body>
+  <nav class="navbar navbar-default">
+    <div class="container" style="margin-top: 10px;">
+      <ul class="nav navbar-nav pull-right">
+        <li ><%= link_to("Login",new_user_session_path) %></li>
+        <li ><%= link_to("Sign up",new_user_registration_path)%></li>
+      </ul>
+    </div>
+  </nav>
+
+  <h1 class="header">Welcome to OurLocalSociety website</h1>
+
+</body>
+</html>

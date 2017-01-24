@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160915091553) do
+ActiveRecord::Schema.define(version: 20170124174139) do
 
   create_table "days", force: :cascade do |t|
     t.integer  "user_id",    limit: 4
@@ -19,6 +19,25 @@ ActiveRecord::Schema.define(version: 20160915091553) do
     t.string   "Summary",    limit: 50,  default: ""
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+  end
+
+  create_table "friends", force: :cascade do |t|
+    t.string   "name",       limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  create_table "friends_users", id: false, force: :cascade do |t|
+    t.integer "user_id",   limit: 4
+    t.integer "friend_id", limit: 4
+  end
+
+  add_index "friends_users", ["friend_id"], name: "index_friends_users_on_friend_id", using: :btree
+  add_index "friends_users", ["user_id"], name: "index_friends_users_on_user_id", using: :btree
+
+  create_table "friendship", id: false, force: :cascade do |t|
+    t.integer "UID", limit: 4, null: false
+    t.integer "FID", limit: 4, null: false
   end
 
   create_table "notes", force: :cascade do |t|

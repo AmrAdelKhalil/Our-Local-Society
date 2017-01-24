@@ -2,11 +2,20 @@ Rails.application.routes.draw do
 
   namespace :tools do
     # get 'schedules/new'
+    get 'schedules/:day_id/:slot_id' => 'schedules#edit'
+    patch 'schedules/:day_id/:slot_id' => 'schedules#update'
+    put 'schedules/:day_id/:slot_id' => 'schedules#update'
     resources :schedules
   end
 
+
+
   #the controller part to tell Devise to see my registrations_controller.rb
-  devise_for :users, :controllers => {:registrations => 'registrations'}
+  devise_for :users, :controllers => {:registrations => 'registrations',sessions: "sessions"}
+
+  devise_scope :user do
+    get '/users/sign_out' => 'sessions#destroy' #modifying route to call delete because link_to send a GET request
+  end
 
   namespace :actors do
     resources :users
