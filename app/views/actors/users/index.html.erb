@@ -41,7 +41,7 @@
                 </a>
               </p>
               <p>
-                <%=f.first_name%> 
+                <%=f.first_name%>
               </p>
             </li>
             <%end%>
@@ -49,11 +49,11 @@
         </div>
     </div>
     <div class="col-lg-9 col-lg-offset-1">
-      <%= link_to('Edit the table', {:controller => 'tools/schedules', :action => 'edit',:id => current_user.id},{:class=>'pull-right MoveLeft btn btn-default'}) %>
+      <!-- <%= link_to('Edit the table', {:controller => 'tools/schedules', :action => 'edit',:id => current_user.id},{:class=>'pull-right MoveLeft btn btn-default'}) %> -->
       <% current_user.days.each do |day| %>
-        <p class="defaultWriteWay"><%=day.Name%></p>
+        <div class="dayInfoWithArrow"><p class="defaultWriteWay" id="<%=day.Name%>"><%=day.Name%><span id="arrow_drop_slots_right" onclick="setVisibleHide(document.getElementById('<%=day.Name%>'),this);"></span></p></div>
         <% day.slots.each do |slot| %>
-          <div class="col-lg-3 DayContent">
+          <div class="col-lg-3 DayContent hiddenDay" name="<%=day.Name%>">
             <div class="DateOfLec">
               <p class= "smWriteWay MoveRight">
                 <%=slot.Start%>
@@ -66,7 +66,7 @@
                 <%= link_to( image_tag("/assets/edit_icon.png", :class => "editImg"), {:controller=>"/tools/schedules", :action=> "edit", :day_id =>day.id, :slot_id => slot.id},{:class=>"editBtn"})%>
               </p>
             </div>
-            <p class="MidWriteWay">
+            <p class="MidWriteWay textOverFlow">
               <%=slot.Desc%>
             </p>
           </div>
