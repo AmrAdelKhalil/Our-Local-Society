@@ -24,4 +24,28 @@ function setVisibleHide(dayName, button){
 
         button.id = "arrow_drop_slots_right";
     }
+};
+function openInDialog(slot){
+
+    var parentDiv = slot.parentNode.parentNode.parentNode;// to get the parent of the parent of the parent
+    var paragraphs = parentDiv.getElementsByTagName('p');
+    var innerText = paragraphs[paragraphs.length-1].innerHTML;
+
+    var modal = document.getElementById('myModal');
+    var content = document.getElementById('textDialog');
+
+    content.innerHTML = innerText;
+    modal.style.display = "block";
+}
+
+function closeDialog(){
+    var modal = document.getElementById('myModal');
+    modal.style.display = "none";
+}
+
+window.onclick = function(event) {
+    var modal = document.getElementById('myModal');
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
 }
