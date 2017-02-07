@@ -13,6 +13,9 @@
   padding: 0;
   margin: 0;
 }
+p,h1,h2,h3,h4,h5,h6{
+  cursor: default;
+}
 body{
   background: url("/assets/wel.jpg") center fixed;
   background-repeat: no-repeat;
@@ -91,6 +94,10 @@ body{
   border: 1px solid black;
   margin-right: 5px;
   position: relative;
+  cursor: pointer;
+  p{
+    cursor: pointer;
+  }
 }
 .dayInfoWithArrow{
   padding-top: 10px;
