@@ -51,10 +51,18 @@
     <div class="col-lg-9 col-lg-offset-1">
       <!-- <%= link_to('Edit the table', {:controller => 'tools/schedules', :action => 'edit',:id => current_user.id},{:class=>'pull-right MoveLeft btn btn-default'}) %> -->
       <% current_user.days.each do |day| %>
-        <div class="dayInfoWithArrow"><p class="defaultWriteWay" id="<%=day.Name%>"><%=day.Name%><span id="arrow_drop_slots_right" onclick="setVisibleHide(document.getElementById('<%=day.Name%>'),this);"></span></p></div>
+        <div class="dayInfoWithArrow">
+          <p class="defaultWriteWay" id="<%=day.Name%>"> <%=day.Name%>
+            <span id="arrow_drop_slots_right" onclick="setVisibleHide(document.getElementById('<%=day.Name%>'),this);"></span>
+          </p>
+        </div>
         <% day.slots.each do |slot| %>
-          <div class="col-lg-3 DayContent hiddenDay" name="<%=day.Name%>">
+          <div class="col-lg-3 DayContent hiddenDay" name="<%=day.Name%>" >
             <div class="DateOfLec">
+              <p class="smWriteWay">
+                <img src="/assets/list_icon.png" class="editImgLeft" title="view slot" onclick="openInDialog(this);"/>
+              </p>
+
               <p class= "smWriteWay MoveRight">
                 <%=slot.Start%>
               </p>
@@ -63,8 +71,9 @@
                 <%=slot.End%>
               </p>
               <p class="smWriteWay">
-                <%= link_to( image_tag("/assets/edit_icon.png", :class => "editImg"), {:controller=>"/tools/schedules", :action=> "edit", :day_id =>day.id, :slot_id => slot.id},{:class=>"editBtn"})%>
+                <%= link_to( image_tag("/assets/edit_icon.png", :class => "editImg", :title=>'edit'), {:controller=>"/tools/schedules", :action=> "edit", :day_id =>day.id, :slot_id => slot.id},{:class=>"editBtn"})%>
               </p>
+
             </div>
             <p class="MidWriteWay textOverFlow">
               <%=slot.Desc%>
@@ -75,7 +84,12 @@
     </div>
   </div>
 </div>
-
+<div class="modal" id="myModal">
+  <div class="modal-content">
+    <span class="close" onclick="closeDialog();">&times;</span>
+    <p id="textDialog"></p>
+  </div>
+</div>
   <%= javascript_include_tag 'application'%>
 </body>
 </html>
