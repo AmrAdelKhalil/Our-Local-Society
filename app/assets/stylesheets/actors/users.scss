@@ -89,12 +89,14 @@ body{
 .DayContent{
   width: 150px;
   height: 100px;
-  border-radius: 7px;
+  border-radius: 7px 0 7px 0;
   margin-bottom: 10px;
   border: 1px solid black;
   margin-right: 5px;
   position: relative;
   cursor: pointer;
+  z-index: 1;
+  background-color: #ebebeb;
   p{
     cursor: pointer;
   }

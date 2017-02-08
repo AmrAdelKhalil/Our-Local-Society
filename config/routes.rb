@@ -10,11 +10,13 @@ Rails.application.routes.draw do
 
 
 
-  #the controller part to tell Devise to see my registrations_controller.rb
+  #the controller part to tell Devise to see my registrations_controller.rb and my sessions_controller.rb
   devise_for :users, :controllers => {:registrations => 'registrations',sessions: "sessions"}
 
+
   devise_scope :user do
-    get '/users/sign_out' => 'sessions#destroy' #modifying route to call delete because link_to send a GET request
+    #modifying route to call delete because link_to send a GET request, because browsers can only send GET or POST requests
+    get '/users/sign_out' => 'sessions#destroy' 
   end
 
   namespace :actors do
