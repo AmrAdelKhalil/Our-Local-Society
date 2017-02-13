@@ -7,8 +7,21 @@ class Actors::UsersController < ApplicationController
     #     puts day.Name
     #     puts day.id
     #   end
-        @friends = current_user.all_friends
+        @friends = getFriends
         render('index')
     end
 
+    def listUsers
+        @friends = getFriends
+        @nonFriends = getNonFriends
+        render('listUsers')
+    end
+
+    private
+        def getFriends
+            return current_user.all_friends
+        end
+        def getNonFriends
+            return current_user.get_non_friends
+        end
 end

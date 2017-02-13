@@ -16,11 +16,12 @@ Rails.application.routes.draw do
 
   devise_scope :user do
     #modifying route to call delete because link_to send a GET request, because browsers can only send GET or POST requests
-    get '/users/sign_out' => 'sessions#destroy' 
+    get '/users/sign_out' => 'sessions#destroy'
   end
 
   namespace :actors do
     resources :users
+    get '/service/listUsers' => 'users#listUsers'
   end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

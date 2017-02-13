@@ -12,8 +12,14 @@
       </p>
     </div>
     <div class="info-friends">
+      <%=link_to("More Connection",{:action=>'listUsers'})%><br />
+
+      <%if @friends.length > 3%>
+      <%=link_to("see all(notImpYet)",{:action=>'listUsers'})%>
+      <%end%>
       <ul>
-        <%@friends.each do |f|%>
+          <!-- this print the first 3 records of friends -->
+        <%@friends.take(3).each do |f|%>
         <li>
           <p>
             <a href="#">

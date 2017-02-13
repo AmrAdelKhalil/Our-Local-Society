@@ -1,0 +1,26 @@
+@font-face {
+  font-family: "Indie Flower";
+  src: url("/assets/IndieFlower.ttf") format("truetype");
+}
+@font-face {
+  font-family: "CaveatBrush-Regular";
+  src: url("/assets/CaveatBrush-Regular.ttf");
+}
+*{
+  padding: 0;
+  margin: 0;
+}
+p,h1,h2,h3,h4,h5,h6{
+  cursor: default;
+}
+body{
+  background: url("/assets/wel.jpg") center fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.header{
+  font-size: 50px;
+  font-family: "CaveatBrush-Regular";
+  color: #333;
+}
