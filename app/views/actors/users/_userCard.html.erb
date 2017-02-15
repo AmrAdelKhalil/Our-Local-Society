@@ -3,16 +3,16 @@
       <img src="/assets/UserTemplate.png">
       <p class="defaultWriteWay"><%=current_user.first_name.capitalize%> <%=current_user.second_name.capitalize%></p>
       <p class="MidWriteWay">Level: <%=current_user.level%></p>
-      <p id="LogOut">
+      <!-- <p id="LogOut">
         <% if user_signed_in? %>
           <%= link_to('logout', users_sign_out_path) %>
         <% else %>
           <%= link_to('login', new_user_session_path)  %>
         <% end %>
-      </p>
+      </p> -->
     </div>
     <div class="info-friends">
-      <%=link_to("More Connection",{:action=>'listUsers'})%><br />
+      <!-- <%=link_to("Connection",{:action=>'listUsers'})%><br /> -->
 
       <%if @friends.length > 3%>
       <%=link_to("see all(notImpYet)",{:action=>'listUsers'})%>
