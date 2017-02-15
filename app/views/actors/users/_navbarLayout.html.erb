@@ -1,0 +1,20 @@
+<nav class="navbar navbar-default ">
+  <div class="container">
+    <div class="navbar-header">
+      <%=link_to("Our local society",{:controller=>'actors/users',:action=>'index'},{:class=>"navbar-brand"})%>
+    </div>
+
+    <% if user_signed_in? %>
+      <%= link_to('logout', users_sign_out_path,{:class=>'btn btn-danger navbar-btn pull-right'}) %>
+    <% else %>
+      <%= link_to('login', new_user_session_path,{:class=>'btn btn-danger navbar-btn pull-success'})  %>
+    <% end %>
+
+
+    <ul class="nav navbar-nav pull-right">
+      <li><%=link_to("Home",{:controller=>'actors/users',:action=>'index'})%></li>
+      <li><%=link_to("Contacts",{:controller=>'actors/users',:action=>'listUsers'})%></li>
+    </ul>
+
+  </div>
+</nav>
