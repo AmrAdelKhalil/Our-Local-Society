@@ -26,8 +26,8 @@
                   <div class="cardInfoContact">
                     <%=u.first_name%>
                   </div>
-
-                  <button type="button" class="btn btn-success btnContactCard">add</button>
+                  <input type="hidden" id="unFriendID" value='<%= u.id %>' />
+                  <button type="button" class="btn btn-success btnContactCard" onclick="addNewFriend(this);">add</button>
                 </div>
             </div>
           <% end %>
@@ -46,8 +46,8 @@
                 <div class="cardInfoContact">
                   <%=u.first_name%>
                 </div>
-
-                <button type="button" class="btn btn-danger btnContactCard">remove</button>
+                <input type="hidden" id="unFriendID" value='<%= u.id %>' />
+                <button type="button" class="btn btn-danger btnContactCard" onclick="removeFriend(this);">remove</button>
               </div>
           </div>
         <% end %>

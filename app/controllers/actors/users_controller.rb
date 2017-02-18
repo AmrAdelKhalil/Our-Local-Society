@@ -17,6 +17,17 @@ class Actors::UsersController < ApplicationController
         render('listUsers')
     end
 
+    def addNewFriend
+        @friend = User.find(params[:id])
+        current_user.addFriend(@friend)
+        self.listUsers
+    end
+
+    def removeFriend
+        @friend = User.find(params[:id])
+        current_user.removeFriend(@friend)
+        self.listUsers
+    end
     private
         def getFriends
             return current_user.all_friends

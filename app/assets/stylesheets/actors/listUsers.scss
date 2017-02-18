@@ -30,8 +30,12 @@ body{
   height: 250px;
   border: 1px solid black;
   margin-top: 12px;
-  box-shadow: 10px 10px 5px grey;
+  box-shadow: 4px 4px 5px grey;
   position:relative;
+}
+
+.contactCard:hover{
+  box-shadow: 7px 7px 5px grey;
 }
 
 .circle {

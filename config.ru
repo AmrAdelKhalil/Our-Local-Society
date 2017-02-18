@@ -2,3 +2,6 @@
 
 require ::File.expand_path('../config/environment', __FILE__)
 run Rails.application
+
+# the next line open a tab automatically, uncomment it if you want this
+# Launchy.open("http://localhost:3000") if Rails.env.development?

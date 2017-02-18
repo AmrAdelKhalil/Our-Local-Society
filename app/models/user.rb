@@ -27,12 +27,21 @@ class User < ActiveRecord::Base
 
   #returns all not firends of a user
   def get_non_friends
-    
+
     userFriends = self.all_friends
     userNotFriends = User.all_except(userFriends)
+
+    #user is not friend of himself, next line break do this
     userNotFriends = userNotFriends.all_except(self)
 
     return userNotFriends
   end
 
+  def addFriend(friend)
+    self.all_friends << friend
+  end
+
+  def removeFriend(friend)
+    self.all_friends.delete(friend)
+  end
 end
