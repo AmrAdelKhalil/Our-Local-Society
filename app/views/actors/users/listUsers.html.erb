@@ -9,15 +9,17 @@
   <%= stylesheet_link_tag('/assets/actors/listUsers') %>
 </head>
 <body>
-  <div class ="container">
+  <!-- <div class ="container">
     <h1 class="header">Our Local Society</h1>
-  </div>
+  </div> -->
+  <%= render "actors/users/navbarLayout" %>
+
   <div class="container">
     <div class="row">
-      <div class="col-lg-11 col-lg-offset-1">
+      <div class="col-lg-11 col-lg-offset-1" id="nonFriendBool">
         <h3 class="header">All people</h3>
           <% @nonFriends.each do |u|%>
-            <div class="col-lg-3">
+            <div class="col-lg-3" >
                 <div class="contactCard">
                   <div class="imgContactCard">
                     <img class="circle" src="/assets/UserTemplate.png" />
@@ -26,32 +28,30 @@
                   <div class="cardInfoContact">
                     <%=u.first_name%>
                   </div>
-                  <input type="hidden" id="unFriendID" value='<%= u.id %>' />
+                  <input type="hidden"  value='<%= u.id %>' />
                   <button type="button" class="btn btn-success btnContactCard" onclick="addNewFriend(this);">add</button>
                 </div>
             </div>
           <% end %>
       </div>
 
-      <div class="col-lg-11 col-lg-offset-1" style="margin-bottom:20px;">
+      <div class="col-lg-11 col-lg-offset-1" style="margin-bottom:20px;" id="friendBool">
         <h3 class="header">Friends</h3>
+          <% @friends.each do |u|%>
+            <div class="col-lg-3"  >
+                <div class="contactCard">
+                  <div class="imgContactCard">
+                    <img class="circle" src="/assets/UserTemplate.png" />
+                  </div>
 
-        <% @friends.each do |u|%>
-          <div class="col-lg-3">
-              <div class="contactCard">
-                <div class="imgContactCard">
-                  <img class="circle" src="/assets/UserTemplate.png" />
+                  <div class="cardInfoContact">
+                    <%=u.first_name%>
+                  </div>
+                  <input type="hidden" value='<%= u.id %>' />
+                  <button type="button" class="btn btn-danger btnContactCard" onclick="removeFriend(this);">remove</button>
                 </div>
-
-                <div class="cardInfoContact">
-                  <%=u.first_name%>
-                </div>
-                <input type="hidden" id="unFriendID" value='<%= u.id %>' />
-                <button type="button" class="btn btn-danger btnContactCard" onclick="removeFriend(this);">remove</button>
-              </div>
-          </div>
-        <% end %>
-
+            </div>
+          <% end %>
       </div>
     </div>
   </div>

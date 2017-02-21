@@ -64,3 +64,26 @@ body{
   right: 2px;
   font-family: CaveatBrush-Regular;
 }
+.navbar-default{
+  background-color: #EBEBEB;
+  border: none;
+  font-family: "CaveatBrush-Regular";
+  font-size: 15px;
+  border-bottom: 0.5px solid black;
+  color:black;
+  border-radius: 0px;
+}
+
+.navbar-default .navbar-nav>li>a{
+  color: #333;
+  transition-duration: .5s;
+}
+
+.navbar-header .navbar-brand{
+  color:black;
+}
+
+.navbar-default .navbar-nav>li>a:hover{
+  color: #bfbfbf;
+  transition-duration: .3s;
+}
