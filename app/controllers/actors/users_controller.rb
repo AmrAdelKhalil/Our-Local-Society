@@ -28,6 +28,10 @@ class Actors::UsersController < ApplicationController
         current_user.removeFriend(@friend)
         self.listUsers
     end
+
+    def about
+        render('aboutPage')
+    end
     private
         def getFriends
             return current_user.all_friends

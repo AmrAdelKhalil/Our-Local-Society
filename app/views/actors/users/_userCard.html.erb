@@ -31,6 +31,13 @@
           </p>
         </li>
         <%end%>
+        <% if @friends.length == 0%>
+          <li style="margin-left:15px;">
+            <p>
+              add friends from <%= link_to("here",{:controller=>'actors/users', :action=>'listUsers'})%>
+            </p>
+          </li>
+        <% end%>
       </ul>
     </div>
 </div>
